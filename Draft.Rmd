@@ -1,0 +1,35 @@
+---
+title: "The Envelope Paradox"
+author: "MGB"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In 1953, Belgian mathematician Maurice Kraitchik presented a scenario in his book about recreational mathematics, in which two men compared the values of neckties their wives purchased for them, with neither man knowing the prices. In 1953, a math book credited physicist Erwin Schrodinger with a similar problem with playing cards — where a cat in a box is both alive and dead until you open the box and find out. 
+\
+The envelope paradox is about two envelopes. One of them contains twice as much money as the other one, and you get to choose which one you want to take. But before you open your envelope and find out whether you’ve won, the smaller prize or the larger prize, you have the opportunity to switch to the other envelope, so, do you switch?
+\
+Let's say if $X$ is inside the envelope, We don’t know how much X is, just that there’s something in the envelope we can call X. The probability of that envelope containing the smaller value is $1/2$, and the probability of it containing the larger amount is $1/2$ it's 50\%.
+Even before you open it, you get to know the content of the other envelope say $Y$, then it will be either $0.5X$ or $2X$. So now the expected value of the other envelope is given by:
+\
+$$E_X(Y)= 0.5(0.5X)+0.5(2X)=(5/4)X$$
+$(5/4)X$ is 25\% more than just $X$, so our best possible choice is to switch to the other envelope. However, if you were given the other envelope, the same logic would apply. You have a $50/50$ chance (symmetry) of choosing the envelope with more money inside, switching can’t change that. No matter which envelope you choose the other appears to have a larger expected value.
+
+## Bayesian Approach
+ 
+First, we can look at the Bayesian approach to the Exchange Paradox, and consider the methods applied in this subset of statistics. Christensen and Utts (C&U) give a good demonstration on how a Bayesian Statistician might approach the problem. According to C&U, the main issue here is that the paradox is assuming that no information is gained from observing how much money is in your envelope. C&U go on to reiterate, “the key to a successful analysis is in recognizing the potential information to be gained from the observation.” The main point of the Bayesian approach is that the paradox does not acknowledge that there is information to be gained from observing what is in your envelope. For example, if a STAT216 course instructor was performing an educational experiment on their class, we would expect the amounts of money to be vastly different than what they might be if a large research company was performing a similar experiment. Also, C&U note that if we were to open our envelope and observe a large amount of money, our intuition would be to not exchange our envelope regardless of what we calculate the expected value of exchanging to be. So, what should we do?
+\
+Now let’s take a look at the suggested solution given by C&U. First,we want to define X as a random variable to represent the amount of money in our envelope. We also want to let m be the parameter from the problem used to denote the smaller amount of money, and 2m would be the larger amount of money. We also want to define M as the “subjectively random amount of money placed in the first envelope.” C&U also define $g(m)$ as the density for M. The we have that the sampling distribution for X is  $P(X = m|M = m) = P(X = 2m|M = m) = \frac{1}{2}$. We know that $X = M~~or~2M$, so once we observe $X = x$, M can only be x or $x/2$. Then C&U apply Bayes’ Theorem and we have:
+
+
+## \textcolor{blue}{The Frequentist Approach}
+
+We let $X_i$ be the amount of money in the envelope $i, (i= 1, 2)$. The probability space of $X = (X_1, X_2)$ is $\Omega = \{(x_1,x_2): x_2 = 2x_1~ or~ x_2 = (1/2) x_1,~ and ~x1 \geq 0\}$. We make the symmetry assumption  that $$Pr((X_1, X_2 )\in A )= Pr((X_1, X_2 )\in A^T) ~~~\forall~~A \in~ \mathbb{R}^2 ~where~A^T = \{(x,y)\in \mathbb{R}^2:(y,x) \in A \}$$
+The symmetry assumption presupposes that there is no difference between two envelopes and that the game is completely fair.
+
+
+
+
